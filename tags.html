@@ -6,15 +6,15 @@ permalink: /tags/
 
 {% assign sorted_tags = site.tags | sort %}
 {% for tag in sorted_tags %}
-  <div class="tag-section" id="{{ tag[0] }}">
+  <section class="tag-section" id="{{ tag[0] }}">
     <h2>{{ tag[0] }}</h2>
     <ul>
       {% for post in tag[1] %}
         <li>
           <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-          <span class="tag-date">{{ post.date | date: "%d %B %Y" }}</span>
+          <time class="tag-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
         </li>
       {% endfor %}
     </ul>
-  </div>
+  </section>
 {% endfor %}
