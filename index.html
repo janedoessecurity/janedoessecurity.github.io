@@ -2,11 +2,6 @@
 layout: default
 ---
 
-<div class="hero">
-  <h1>Hi, I'm Jane.</h1>
-  <p>Cybersecurity professional, CISSP certified, and lifelong learner. Welcome to my blog.</p>
-</div>
-
 <div class="posts">
   {% for post in site.posts %}
     <article class="post-card">
@@ -24,7 +19,7 @@ layout: default
             <a href="{{ site.baseurl }}/tags/#{{ tag }}" class="tag-pill">{{ tag }}</a>
           {% endfor %}
         </div>
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More &rarr;</a>
       </div>
     </article>
   {% endfor %}

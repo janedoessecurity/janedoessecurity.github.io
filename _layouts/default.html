@@ -5,12 +5,18 @@
 
     {% include meta.html %}
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/images/favicon.svg" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
   </head>
 
   <body>
+    <div class="accent-bar"></div>
+
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
@@ -30,6 +36,17 @@
       </div>
     </div>
 
+    {% if page.url == "/" %}
+    <div class="wrapper-hero">
+      <div class="container">
+        <div class="hero">
+          <h1>Hi, I'm Jane.</h1>
+          <p>Cybersecurity professional, CISSP certified, and lifelong learner.<br />Welcome to my blog.</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
     <div id="main" role="main" class="container">
       {{ content }}
     </div>
@@ -37,7 +54,10 @@
     <div class="wrapper-footer">
       <div class="container">
         <footer class="footer">
-          {% include svg-icons.html %}
+          <div class="footer-icons">
+            {% include svg-icons.html %}
+          </div>
+          <p class="footer-text">&copy; {{ site.time | date: '%Y' }} {{ site.name }}. Built with Jekyll.</p>
         </footer>
       </div>
     </div>
