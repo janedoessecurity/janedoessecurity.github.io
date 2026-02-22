@@ -10,18 +10,18 @@ avatar: https://github.com/janedoessecurity.png
 # Your website URL
 url: https://janedoessecurity.com
 
-# Footer links - add your social media
+# Footer links
 footer-links:
   dribbble:
-  email: jane@janedoessecurity.com  # if you set up email
+  email:
   facebook:
   flickr:
   github: janedoessecurity
   instagram:
-  linkedin:  # add your LinkedIn username if you want
+  linkedin: jane-thompson-iom-infosec
   pinterest:
-  rss: rss
-  twitter:  # add if you have Twitter
-  stackoverflow: 
-  youtube: 
+  rss:
+  twitter:
+  stackoverflow:
+  youtube:
   googleplus:
