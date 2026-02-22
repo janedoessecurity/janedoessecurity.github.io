@@ -1,7 +1,12 @@
 ---
 layout: post
 title: Building a Cybersecurity Home Lab on a Raspberry Pi
+tags: [homelab, raspberry-pi, learning]
 ---
+
+One of the best pieces of advice I've received in cybersecurity is: **get hands-on**. A Raspberry Pi is a tiny, affordable, and surprisingly capable machine that makes the perfect home lab.
+
+<!--more-->
 
 ## Why a Home Lab?
 
