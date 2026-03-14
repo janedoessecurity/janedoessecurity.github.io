@@ -2,7 +2,7 @@
 name: JaneDoesSecurity
 description: Cybersecurity Professional | CISSP
 url: https://janedoessecurity.com
-avatar: https://github.com/janedoessecurity.png
+avatar: /images/logo.png
 
 # Post settings
 excerpt_separator: <!--more-->
