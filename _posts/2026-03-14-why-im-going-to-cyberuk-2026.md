@@ -59,3 +59,5 @@ I'm looking forward to the talks, the conversations, and the chance to spend tim
 Over the past few years I've been investing heavily in my career in cybersecurity – completing a master's degree while working full time, earning the CISSP certification, and continuing to develop my skills in threat detection engineering.
 
 Attending CyberUK feels like another step in that journey. It's an opportunity to keep learning, stay connected to the wider security community, and continue growing in a field that constantly challenges and fascinates me.
+
+I'll also be writing a follow-up post here afterwards to share some of the highlights, ideas, and lessons from the conference.
