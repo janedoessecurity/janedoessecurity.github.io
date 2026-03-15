@@ -33,6 +33,6 @@ Status classes: reading, reviewed, upcoming
 
 <div class="bookshelf-about">
   <h2>Why a Security Bookshelf?</h2>
-  <p>Cybersecurity moves fast, but the fundamentals — risk thinking, adversarial mindset, understanding how systems fail — are timeless. Reading widely helps me connect dots between technical controls and the bigger picture. Plus, some of these books are genuinely brilliant and deserve more attention in the security community.</p>
-  <p>If you've got a recommendation, I'd love to hear it — find me on <a href="https://www.linkedin.com/in/{{ site.footer-links.linkedin }}">LinkedIn</a>.</p>
+  <p>Reading widely helps me connect the dots between technical security work and the bigger picture of how systems, attackers, and organisations interact.</p>
+  <p>It also helps that many cybersecurity books are genuinely fascinating reads — and I love a good book.</p>
 </div>
