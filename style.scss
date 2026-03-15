@@ -584,6 +584,79 @@ nav {
   &:last-child { border-bottom: none; }
 }
 
+// ————— Bookshelf —————
+
+.bookshelf-grid {
+  margin-top: 32px;
+}
+
+.book-card {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 12px;
+
+  @include mobile { padding: 20px 16px; }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: $text;
+  }
+
+  p {
+    color: $textSecondary;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .read-more {
+    display: inline-block;
+    margin-top: 4px;
+  }
+}
+
+.book-month {
+  font-family: $mono;
+  font-size: 12px;
+  color: $textMuted;
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+}
+
+.book-status {
+  display: inline-block;
+  font-family: $mono;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 3px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.book-status.reviewed {
+  background: $successSubtle;
+  color: $success;
+}
+
+.book-status.reading {
+  background: $accentSubtle;
+  color: $accent;
+}
+
+.book-status.upcoming {
+  background: rgba($textMuted, 0.1);
+  color: $textMuted;
+}
+
+.bookshelf-about {
+  margin-top: 48px;
+}
+
 // ————— Tags page —————
 
 .tag-section {
