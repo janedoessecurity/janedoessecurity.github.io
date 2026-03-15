@@ -20,3 +20,5 @@ Certifications are great for structured learning, and hands-on labs are essentia
 I've also found that writing about what I read is not only enjoyable and motivating, but it helps reinforce the learning process.
 
 Each time I finish a book, I'll write a short post here sharing my key takeaways and reflections.
+
+To kick off the series, the first book on the Security Bookshelf will be **Locked Up: Cybersecurity Threat Mitigation Lessons from a Real-World LockBit Ransomware Response**. Since it focuses on a real-world ransomware response, it should offer some interesting insights into how attacks unfold and how organisations respond.
