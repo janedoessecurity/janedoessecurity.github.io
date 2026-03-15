@@ -7,13 +7,6 @@ permalink: /certifications/
 Certifications have been an important part of my cybersecurity journey. Here's where I'm at.
 
 <div class="cert-card">
-  <h3>CISSP — Certified Information Systems Security Professional</h3>
-  <span class="cert-status achieved">Achieved</span>
-  <p>The CISSP from ISC2 covers eight domains of information security, from security and risk management through to software development security. It was a challenging exam that pushed me to think broadly about security rather than focusing on any single technical area.</p>
-  <p>I wrote about my study approach and exam experience in my <a href="/my-cissp-journey/">CISSP journey post</a>.</p>
-</div>
-
-<div class="cert-card">
   <h3>CCSP — Certified Cloud Security Professional</h3>
   <span class="cert-status studying">Studying</span>
   <p>The CCSP builds on the CISSP foundation with a deep focus on cloud security architecture, design, operations, and compliance. As organisations continue to move workloads to the cloud, understanding how to secure these environments properly feels increasingly essential.</p>
