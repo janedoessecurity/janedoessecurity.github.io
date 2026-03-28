@@ -10,9 +10,10 @@ Hands-on practice is where the theory clicks. I use platforms like [TryHackMe](h
 
   <div class="lab-card">
     <div class="lab-platform thm">TryHackMe</div>
-    <h3>Coming soon</h3>
+    <h3>Authentication, Enumeration & Predictable Tokens</h3>
     <span class="lab-difficulty easy">Easy</span>
-    <p>First write-up on the way.</p>
+    <p>Exploring user enumeration via error messages, automated enumeration, and brute forcing predictable password reset tokens with Burp Suite.</p>
+    <a href="/authentication-enumeration-predictable-tokens/" class="read-more">Read the write-up &rarr;</a>
   </div>
 
 </div>
