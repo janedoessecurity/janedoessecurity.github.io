@@ -200,31 +200,6 @@ hr {
   font-size: 13px;
 }
 
-nav {
-  display: flex;
-  gap: 4px;
-  font-size: 14px;
-  flex-shrink: 0;
-
-  a {
-    color: $textSecondary;
-    font-weight: 500;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: background 0.15s ease, color 0.15s ease;
-
-    &:hover {
-      color: $text;
-      background: $surface;
-    }
-
-    &.active {
-      color: $cyberGreen;
-      background: $cyberGreenSubtle;
-    }
-  }
-}
-
 // ————— Hero —————
 
 .wrapper-hero {
