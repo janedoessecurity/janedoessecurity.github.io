@@ -245,6 +245,16 @@ hr {
     content: '$ ';
     color: $cyberGreen;
   }
+
+  &::after {
+    content: '_';
+    color: $cyberGreen;
+    animation: blink 1s step-end infinite;
+  }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
 .hero-tagline {
