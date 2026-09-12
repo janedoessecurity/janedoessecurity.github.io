@@ -329,6 +329,12 @@ nav {
   border-bottom: 1px solid $border;
 }
 
+.empty-state {
+  color: $textMuted;
+  font-size: 15px;
+  padding: 24px 0;
+}
+
 // ————— Post cards (homepage) —————
 
 .posts {

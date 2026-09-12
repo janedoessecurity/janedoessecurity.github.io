@@ -5,6 +5,10 @@ layout: default
 <section class="posts" id="posts">
   <h2 class="section-heading">Latest Posts</h2>
 
+  {% if site.posts.size == 0 %}
+    <p class="empty-state">Nothing here yet &mdash; check back soon.</p>
+  {% endif %}
+
   {% for post in site.posts %}
     {% assign words = post.content | number_of_words %}
     {% assign read_time = words | divided_by: 200 %}

@@ -7,16 +7,9 @@ permalink: /labs/
 Hands-on practice is where the theory clicks. I use platforms like [TryHackMe](https://tryhackme.com) and [Hack The Box](https://www.hackthebox.com) to sharpen my skills, and this page is where I document the key learnings from each lab I complete.
 
 <div class="lab-grid">
-
-  <div class="lab-card">
-    <div class="lab-platform thm">TryHackMe</div>
-    <h3>Authentication, Enumeration & Predictable Tokens</h3>
-    <span class="lab-difficulty easy">Easy</span>
-    <p>Exploring user enumeration via error messages, automated enumeration, and brute forcing predictable password reset tokens with Burp Suite.</p>
-    <a href="/authentication-enumeration-predictable-tokens/" class="read-more">Read the write-up &rarr;</a>
-  </div>
-
 </div>
+
+<p class="empty-state">No write-ups yet &mdash; check back soon.</p>
 
 <!--
 To add a new lab, copy this template inside the lab-grid div:
