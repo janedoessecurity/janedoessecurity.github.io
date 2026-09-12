@@ -240,7 +240,11 @@ hr {
 .hero-terminal {
   font-family: $mono;
   letter-spacing: 0;
+  display: flex;
+  flex-direction: column;
+}
 
+.hero-command {
   &::before {
     content: '$ ';
     color: $cyberGreen;
@@ -251,6 +255,10 @@ hr {
     color: $cyberGreen;
     animation: blink 1s step-end infinite;
   }
+}
+
+.hero-output {
+  color: $text;
 }
 
 @keyframes blink {
