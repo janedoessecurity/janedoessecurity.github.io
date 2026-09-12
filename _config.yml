@@ -10,5 +10,5 @@ permalink: /:title/
 
 # Footer links
 footer-links:
-  github: janedoessecurity
+  # github: janedoessecurity
   linkedin: jane-thompson-iom-infosec
