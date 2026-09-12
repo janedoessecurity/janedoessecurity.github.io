@@ -305,17 +305,6 @@ nav {
   }
 }
 
-.btn-outline {
-  background: transparent;
-  color: $textSecondary;
-  border-color: $border;
-
-  &:hover {
-    border-color: $accent;
-    color: $accent;
-  }
-}
-
 // ————— Section heading —————
 
 .section-heading {
