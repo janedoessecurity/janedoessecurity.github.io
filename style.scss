@@ -304,13 +304,13 @@ nav {
 }
 
 .btn-primary {
-  background: $accent;
+  background: $ctaPurple;
   color: $bg;
-  border-color: $accent;
+  border-color: $ctaPurple;
 
   &:hover {
-    background: $accentHover;
-    border-color: $accentHover;
+    background: $ctaPurpleHover;
+    border-color: $ctaPurpleHover;
     color: $bg;
   }
 }
