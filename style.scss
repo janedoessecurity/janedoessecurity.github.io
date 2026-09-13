@@ -342,7 +342,7 @@ hr {
   transition: border-color 0.15s ease, background 0.15s ease;
 
   &:hover {
-    border-color: $accent;
+    border-color: $ctaPurple;
     background: $surfaceHover;
   }
 
@@ -376,7 +376,7 @@ hr {
 
   a {
     color: $text;
-    &:hover { color: $accent; }
+    &:hover { color: $ctaPurple; }
   }
 
   @include mobile { font-size: 18px; }
@@ -422,8 +422,8 @@ hr {
 
 .tag-pill {
   display: inline-block;
-  background: $accentSubtle;
-  color: $accent;
+  background: $ctaPurpleSubtle;
+  color: $ctaPurple;
   font-family: $mono;
   font-size: 12px;
   font-weight: 500;
@@ -436,7 +436,7 @@ hr {
   line-height: 20px;
 
   &:hover {
-    background: $accent;
+    background: $ctaPurple;
     color: $bg;
   }
 }
