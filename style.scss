@@ -422,8 +422,8 @@ hr {
 
 .tag-pill {
   display: inline-block;
-  background: $ctaPurpleSubtle;
-  color: $ctaPurple;
+  background: $cyberGreenSubtle;
+  color: $cyberGreen;
   font-family: $mono;
   font-size: 12px;
   font-weight: 500;
@@ -436,7 +436,7 @@ hr {
   line-height: 20px;
 
   &:hover {
-    background: $ctaPurple;
+    background: $cyberGreen;
     color: $bg;
   }
 }
