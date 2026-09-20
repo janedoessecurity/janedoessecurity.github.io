@@ -1,0 +1,78 @@
+<svg viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="aitm-title aitm-desc">
+  <title id="aitm-title">AiTM phishing flow: credential and MFA relay, session cookie theft, and replay into Google Workspace</title>
+  <desc id="aitm-desc">A victim authenticates through an attacker-controlled reverse proxy that relays credentials and MFA to the real Okta service, then the attacker captures the resulting session cookie and replays it later to pivot into Google Workspace via SSO, without triggering another MFA prompt.</desc>
+
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#58A6FF"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#A855F7"/>
+    </marker>
+  </defs>
+
+  <!-- panel -->
+  <rect x="20" y="20" width="1160" height="720" rx="12" fill="#161B22" stroke="#30363D"/>
+
+  <!-- lifelines -->
+  <line x1="170" y1="130" x2="170" y2="400" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="600" y1="130" x2="600" y2="560" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="1030" y1="130" x2="1030" y2="610" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- actor boxes: phase 1 -->
+  <g font-family="Inter, -apple-system, sans-serif">
+    <rect x="60" y="60" width="220" height="70" rx="8" fill="#1C2129" stroke="#30363D"/>
+    <text x="170" y="88" text-anchor="middle" fill="#E6EDF3" font-size="15" font-weight="600">Victim Browser</text>
+    <text x="170" y="108" text-anchor="middle" fill="#8B949E" font-size="12">employee, real Okta account</text>
+
+    <rect x="490" y="60" width="220" height="70" rx="8" fill="#1C2129" stroke="#A855F7"/>
+    <text x="600" y="88" text-anchor="middle" fill="#E6EDF3" font-size="15" font-weight="600">Attacker Infrastructure</text>
+    <text x="600" y="108" text-anchor="middle" fill="#8B949E" font-size="12">reverse proxy · lookalike domain</text>
+
+    <rect x="920" y="60" width="220" height="70" rx="8" fill="#1C2129" stroke="#58A6FF"/>
+    <text x="1030" y="88" text-anchor="middle" fill="#E6EDF3" font-size="15" font-weight="600">Okta</text>
+    <text x="1030" y="108" text-anchor="middle" fill="#8B949E" font-size="12">real identity provider</text>
+  </g>
+
+  <!-- row 1: credentials entered and relayed -->
+  <text x="600" y="158" text-anchor="middle" fill="#E6EDF3" font-size="14" font-family="Inter, -apple-system, sans-serif">1 · credentials entered on the lookalike page, relayed live</text>
+  <line x1="280" y1="175" x2="484" y2="175" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <line x1="716" y1="175" x2="914" y2="175" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- row 2: MFA challenge relayed back -->
+  <text x="600" y="218" text-anchor="middle" fill="#E6EDF3" font-size="14" font-family="Inter, -apple-system, sans-serif">2 · MFA challenge relayed straight through to the victim</text>
+  <line x1="914" y1="235" x2="716" y2="235" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <line x1="484" y1="235" x2="280" y2="235" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- row 3: MFA response relayed -->
+  <text x="600" y="278" text-anchor="middle" fill="#E6EDF3" font-size="14" font-family="Inter, -apple-system, sans-serif">3 · MFA response relayed — satisfied against the real Okta</text>
+  <line x1="280" y1="295" x2="484" y2="295" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <line x1="716" y1="295" x2="914" y2="295" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- row 4: session cookie issued -->
+  <text x="600" y="338" text-anchor="middle" fill="#E6EDF3" font-size="14" font-family="Inter, -apple-system, sans-serif">4 · Okta issues a valid session cookie</text>
+  <line x1="914" y1="355" x2="716" y2="355" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <text x="600" y="382" text-anchor="middle" fill="#A855F7" font-size="12.5" font-family="Inter, -apple-system, sans-serif" font-weight="600">cookie captured by the proxy</text>
+  <text x="170" y="382" text-anchor="middle" fill="#6E7681" font-size="12" font-family="Inter, -apple-system, sans-serif">victim's role ends here, unaware</text>
+
+  <!-- divider -->
+  <text x="600" y="418" text-anchor="middle" fill="#6E7681" font-size="12.5" font-family="SFMono-Regular, Consolas, monospace">— later, from different infrastructure —</text>
+  <line x1="50" y1="430" x2="1150" y2="430" stroke="#21262D" stroke-width="1" stroke-dasharray="2 6"/>
+
+  <!-- row 5: replay -->
+  <text x="815" y="458" text-anchor="middle" fill="#A855F7" font-size="14" font-family="Inter, -apple-system, sans-serif">5 · attacker replays the stolen cookie</text>
+  <line x1="600" y1="475" x2="1024" y2="475" stroke="#A855F7" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+
+  <!-- row 6: session accepted, no MFA -->
+  <text x="815" y="513" text-anchor="middle" fill="#A855F7" font-size="14" font-family="Inter, -apple-system, sans-serif">valid session accepted — no MFA prompt fires</text>
+  <line x1="1030" y1="530" x2="606" y2="530" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowPurple)"/>
+
+  <!-- pivot to workspace -->
+  <text x="895" y="588" text-anchor="end" fill="#A855F7" font-size="14" font-family="Inter, -apple-system, sans-serif">6 · SSO pivot into Google Workspace</text>
+  <line x1="1030" y1="560" x2="1030" y2="604" stroke="#A855F7" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+
+  <rect x="920" y="610" width="220" height="70" rx="8" fill="#1C2129" stroke="#A855F7" font-family="Inter, -apple-system, sans-serif"/>
+  <text x="1030" y="638" text-anchor="middle" fill="#E6EDF3" font-size="15" font-weight="600" font-family="Inter, -apple-system, sans-serif">Google Workspace</text>
+  <text x="1030" y="658" text-anchor="middle" fill="#8B949E" font-size="12" font-family="Inter, -apple-system, sans-serif">reached via SSO, session trusted</text>
+</svg>
