@@ -1,0 +1,128 @@
+<svg viewBox="0 0 1200 1240" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="vish-title vish-desc">
+  <title id="vish-title">Vishing chain: coached number matching, ClickFix over the phone, and a lookalike Okta page, with what closes each path</title>
+  <desc id="vish-desc">An attacker holding the victim's stolen password calls them posing as IT. Attempt one, coaching the victim through an Okta Verify number challenge, fails. Attempt two, a ClickFix command pasted into Terminal, installs an infostealer that exfiltrates browser cookies, saved passwords and Keychain contents. Attempt three, a lookalike Okta page, relays the victim's password and MFA to real Okta and hands the resulting session cookie to the attacker, who replays it into the Okta dashboard and Google Workspace via SSO. Three boxes show what closes each path: Okta FastPass with no fallback stops the coached number and the lookalike page; ClickFix malware needs endpoint controls, session binding and continuous session evaluation; enrollment and helpdesk resets need phishing-resistant enrollment and callback verification.</desc>
+
+  <defs>
+    <marker id="vArrowBlue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#58A6FF"/>
+    </marker>
+    <marker id="vArrowPurple" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#A855F7"/>
+    </marker>
+    <marker id="vArrowAmber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#D29922"/>
+    </marker>
+  </defs>
+
+  <!-- panel -->
+  <rect x="20" y="20" width="1160" height="1200" rx="12" fill="#161B22" stroke="#30363D"/>
+
+  <!-- lifelines: victim 150, attacker 450, lookalike 750, okta 1050 -->
+  <line x1="150" y1="130" x2="150" y2="975" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="450" y1="130" x2="450" y2="975" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="750" y1="130" x2="750" y2="975" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="1050" y1="130" x2="1050" y2="975" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <g font-family="Inter, -apple-system, sans-serif">
+    <!-- actor boxes -->
+    <rect x="40" y="60" width="220" height="70" rx="8" fill="#1C2129" stroke="#30363D"/>
+    <text x="150" y="88" text-anchor="middle" fill="#E6EDF3" font-size="15" font-weight="600">Victim</text>
+    <text x="150" y="108" text-anchor="middle" fill="#8B949E" font-size="12">laptop + real Okta Verify</text>
+
+    <rect x="340" y="60" width="220" height="70" rx="8" fill="#1C2129" stroke="#A855F7"/>
+    <text x="450" y="88" text-anchor="middle" fill="#E6EDF3" font-size="15" font-weight="600">Attacker</text>
+    <text x="450" y="108" text-anchor="middle" fill="#8B949E" font-size="12">"IT" caller + kit control panel</text>
+
+    <rect x="640" y="60" width="220" height="70" rx="8" fill="#1C2129" stroke="#A855F7"/>
+    <text x="750" y="88" text-anchor="middle" fill="#E6EDF3" font-size="15" font-weight="600">Lookalike Okta</text>
+    <text x="750" y="108" text-anchor="middle" fill="#8B949E" font-size="12">attacker's AiTM proxy page</text>
+
+    <rect x="940" y="60" width="220" height="70" rx="8" fill="#1C2129" stroke="#58A6FF"/>
+    <text x="1050" y="88" text-anchor="middle" fill="#E6EDF3" font-size="15" font-weight="600">Okta</text>
+    <text x="1050" y="108" text-anchor="middle" fill="#8B949E" font-size="12">real IdP → Google Workspace</text>
+
+    <text x="600" y="155" text-anchor="middle" fill="#8B949E" font-size="12">the attacker already holds the victim's valid password from an earlier compromise</text>
+
+    <!-- attempt 1 -->
+    <text x="600" y="185" text-anchor="middle" fill="#6E7681" font-size="12.5" font-family="SFMono-Regular, Consolas, monospace">— attempt 1: coached number matching —</text>
+    <line x1="50" y1="197" x2="1150" y2="197" stroke="#21262D" stroke-width="1" stroke-dasharray="2 6"/>
+
+    <text x="300" y="232" text-anchor="middle" fill="#A855F7" font-size="13">call from "IT", spoofed helpdesk number</text>
+    <line x1="444" y1="245" x2="158" y2="245" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#vArrowPurple)"/>
+
+    <text x="750" y="277" text-anchor="middle" fill="#E6EDF3" font-size="13">signs in with the stolen password</text>
+    <line x1="456" y1="290" x2="1042" y2="290" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#vArrowBlue)"/>
+
+    <text x="600" y="322" text-anchor="middle" fill="#E6EDF3" font-size="13">Okta Verify number challenge sent to the victim's phone</text>
+    <line x1="1044" y1="335" x2="158" y2="335" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#vArrowBlue)"/>
+
+    <text x="300" y="367" text-anchor="middle" fill="#A855F7" font-size="13">"we're enabling number matching, pick 42"</text>
+    <line x1="444" y1="380" x2="158" y2="380" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#vArrowPurple)"/>
+
+    <line x1="138" y1="398" x2="162" y2="418" stroke="#6E7681" stroke-width="2"/>
+    <line x1="162" y1="398" x2="138" y2="418" stroke="#6E7681" stroke-width="2"/>
+    <text x="150" y="440" text-anchor="middle" fill="#6E7681" font-size="12">fails: blocked by device/network</text>
+    <text x="150" y="456" text-anchor="middle" fill="#6E7681" font-size="12">policy, or the victim hesitates</text>
+
+    <!-- attempt 2 -->
+    <text x="600" y="490" text-anchor="middle" fill="#6E7681" font-size="12.5" font-family="SFMono-Regular, Consolas, monospace">— attempt 2: ClickFix over the phone —</text>
+    <line x1="50" y1="502" x2="1150" y2="502" stroke="#21262D" stroke-width="1" stroke-dasharray="2 6"/>
+
+    <text x="300" y="532" text-anchor="middle" fill="#A855F7" font-size="13">"paste this into Terminal to finish"</text>
+    <line x1="444" y1="545" x2="158" y2="545" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#vArrowPurple)"/>
+
+    <rect x="45" y="562" width="210" height="56" rx="8" fill="#241C0E" stroke="#D29922"/>
+    <text x="150" y="585" text-anchor="middle" fill="#D29922" font-size="13" font-weight="600">infostealer runs</text>
+    <text x="150" y="605" text-anchor="middle" fill="#C9D1D9" font-size="11.5">cookies · passwords · Keychain</text>
+
+    <text x="300" y="645" text-anchor="middle" fill="#D29922" font-size="13">browser data exfiltrated</text>
+    <line x1="158" y1="658" x2="442" y2="658" stroke="#D29922" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#vArrowAmber)"/>
+
+    <!-- attempt 3 -->
+    <text x="600" y="695" text-anchor="middle" fill="#6E7681" font-size="12.5" font-family="SFMono-Regular, Consolas, monospace">— attempt 3: lookalike Okta page —</text>
+    <line x1="50" y1="707" x2="1150" y2="707" stroke="#21262D" stroke-width="1" stroke-dasharray="2 6"/>
+
+    <text x="300" y="737" text-anchor="middle" fill="#A855F7" font-size="13">sends a companyname-okta link</text>
+    <line x1="444" y1="750" x2="158" y2="750" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#vArrowPurple)"/>
+
+    <text x="450" y="782" text-anchor="middle" fill="#A855F7" font-size="13">enters password + MFA on the lookalike (FastPass shown as "unavailable")</text>
+    <line x1="158" y1="795" x2="742" y2="795" stroke="#A855F7" stroke-width="1.5" marker-end="url(#vArrowPurple)"/>
+
+    <text x="900" y="827" text-anchor="middle" fill="#E6EDF3" font-size="13">relayed live to real Okta</text>
+    <line x1="758" y1="840" x2="1042" y2="840" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#vArrowBlue)"/>
+
+    <text x="900" y="867" text-anchor="middle" fill="#E6EDF3" font-size="13">session cookie issued</text>
+    <line x1="1042" y1="880" x2="758" y2="880" stroke="#58A6FF" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#vArrowBlue)"/>
+
+    <text x="600" y="907" text-anchor="middle" fill="#A855F7" font-size="13">cookie handed to the attacker</text>
+    <line x1="742" y1="920" x2="458" y2="920" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#vArrowPurple)"/>
+
+    <text x="750" y="950" text-anchor="middle" fill="#A855F7" font-size="13">replays session → Okta dashboard → Google Workspace via SSO, no MFA prompt</text>
+    <line x1="458" y1="963" x2="1042" y2="963" stroke="#A855F7" stroke-width="1.5" marker-end="url(#vArrowPurple)"/>
+
+    <!-- mitigations -->
+    <text x="600" y="1010" text-anchor="middle" fill="#6E7681" font-size="12.5" font-family="SFMono-Regular, Consolas, monospace">— what closes each path —</text>
+    <line x1="50" y1="1022" x2="1150" y2="1022" stroke="#21262D" stroke-width="1" stroke-dasharray="2 6"/>
+
+    <rect x="40" y="1045" width="360" height="150" rx="10" fill="#0F1F14" stroke="#00FF41"/>
+    <text x="220" y="1075" text-anchor="middle" fill="#00FF41" font-size="15" font-weight="600">Okta FastPass, no fallback</text>
+    <text x="220" y="1102" text-anchor="middle" fill="#C9D1D9" font-size="12.5">no number to relay: attempt 1 fails</text>
+    <text x="220" y="1124" text-anchor="middle" fill="#C9D1D9" font-size="12.5">origin-bound: won't sign for the lookalike</text>
+    <text x="220" y="1146" text-anchor="middle" fill="#C9D1D9" font-size="12.5">kits fake "unavailable in this region"</text>
+    <text x="220" y="1172" text-anchor="middle" fill="#8B949E" font-size="12">so push / OTP must not be allowed</text>
+
+    <rect x="420" y="1045" width="360" height="150" rx="10" fill="#241C0E" stroke="#D29922"/>
+    <text x="600" y="1075" text-anchor="middle" fill="#D29922" font-size="15" font-weight="600">Not covered: ClickFix malware</text>
+    <text x="600" y="1102" text-anchor="middle" fill="#C9D1D9" font-size="12.5">runs after sign-in, on the real device</text>
+    <text x="600" y="1124" text-anchor="middle" fill="#C9D1D9" font-size="12.5">stolen cookies replay from anywhere</text>
+    <text x="600" y="1146" text-anchor="middle" fill="#C9D1D9" font-size="12.5">needs EDR, DBSC session binding,</text>
+    <text x="600" y="1172" text-anchor="middle" fill="#8B949E" font-size="12">Okta ITP + Universal Logout</text>
+
+    <rect x="800" y="1045" width="360" height="150" rx="10" fill="#0E1A2B" stroke="#58A6FF"/>
+    <text x="980" y="1075" text-anchor="middle" fill="#58A6FF" font-size="15" font-weight="600">Enrollment &amp; helpdesk</text>
+    <text x="980" y="1102" text-anchor="middle" fill="#C9D1D9" font-size="12.5">next move: enrol the attacker's own factor</text>
+    <text x="980" y="1124" text-anchor="middle" fill="#C9D1D9" font-size="12.5">require phishing-resistant enrollment</text>
+    <text x="980" y="1146" text-anchor="middle" fill="#C9D1D9" font-size="12.5">resets only after a verified callback</text>
+    <text x="980" y="1172" text-anchor="middle" fill="#8B949E" font-size="12">IT never asks you to run commands</text>
+  </g>
+</svg>
